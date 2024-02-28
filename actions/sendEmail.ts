@@ -1,17 +1,17 @@
-import { TRPCError } from "@trpc/server"
-import nodemailer from "nodemailer"
+import { TRPCError } from '@trpc/server';
+import nodemailer from 'nodemailer';
 
 // SMTPサーバの設定
 const transporter = nodemailer.createTransport({
   pool: true,
-  service: "gmail",
+  service: 'gmail',
   port: 465, // GmailのSMTPサーバのポート
   auth: {
     user: process.env.EMAIL!,
     pass: process.env.EMAIL_PASSWORD!,
   },
   maxConnections: 1,
-})
+});
 
 // メール送信
 export const sendEmail = async (
@@ -21,23 +21,23 @@ export const sendEmail = async (
 ) => {
   const mailOptions = {
     // 送信元
-    from: `フルスタックチャンネル <${process.env.EMAIL}>`,
+    from: `Hikaru GYoji <${process.env.EMAIL}>`,
     // 送信先
     to: sendTo,
     // 件名
     subject: subject,
     // 本文
     html: body,
-  }
+  };
 
   // メール送信
   transporter.sendMail(mailOptions, (error) => {
     if (error) {
-      console.log(error)
+      console.log(error);
       throw new TRPCError({
-        code: "BAD_REQUEST",
-        message: "メールの送信に失敗しました",
-      })
+        code: 'BAD_REQUEST',
+        message: 'メールの送信に失敗しました',
+      });
     }
-  })
-}
+  });
+};

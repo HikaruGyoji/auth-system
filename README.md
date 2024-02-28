@@ -1,5 +1,28 @@
-# [完全版] T3 Stack入門！デプロイまで実践するサブスクアプリ構築マスターガイド
+## 使用技術
 
-https://zenn.dev/hathle/articles/t3-stack-introduction
+- Next.js
+- TypeScript
+- tRPC
+- Prisma
+- Tailwind CSS
+- NextAuth.js
 
-![](https://res.cloudinary.com/dhaciqd0v/image/upload/v1699615511/LINE/youtube_qc6hjl.png)
+## 実装機能
+
+- ログイン、サインアップ（Google、メールアドレス）
+- ログアウト
+- パスワード再設定
+- パスワード変更
+- プロフィール編集機能
+- ブログの一覧表示、詳細表示、新規投稿、編集、削除
+- プロフィール詳細表示の機能
+- コメントの投稿、編集、削除機能
+- いいね機能
+- ページネーション機能
+
+## サブスクリプション
+
+- 購入
+- 管理
+- キャンセル
+- 購入履歴の確認
